@@ -2,6 +2,39 @@
 
 Standalone web interface for Magento product imports. Installs [Magmi Core](https://github.com/grinet/magmi2-core) and CSV, TSV, XLS and XLSX support through Composer.
 
+![Magmi sign-in screen](screenshots/shot_01_login.png)
+
+[Interface guide and screenshots](docs/USER_GUIDE.md)
+
+<details>
+<summary>Explore the interface</summary>
+
+**Overview**
+
+![Overview](screenshots/shot_02_overview.png)
+
+**Import profiles**
+
+![Import profiles](screenshots/shot_04_profile_detail.png)
+
+**Run an import**
+
+![Run an import](screenshots/shot_05_run_import.png)
+
+**Preview data**
+
+![Preview data](screenshots/shot_05_run_import_preview_data.png)
+
+**Import report**
+
+![Import report](screenshots/shot_05_run_import_2.png)
+
+**Settings**
+
+![Settings](screenshots/shot_06_settings.png)
+
+</details>
+
 ## Requirements
 
 PHP 8.2+, Composer 2, and access to the Magento database and media directory. Composer checks the required PHP extensions. Tested with PHP 8.4 and Magento Open Source 2.4.9.
