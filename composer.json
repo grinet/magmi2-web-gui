@@ -1,0 +1,30 @@
+{
+    "name": "grinet/magmi2-web-gui",
+    "description": "Magmi New Era - Web GUI Application",
+    "type": "library",
+    "license": "OSL-3.0",
+    "require": {
+        "php": ">=8.2",
+        "grinet/magmi2-core": "^0.1@alpha",
+        "phpoffice/phpspreadsheet": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Magmi\\Gui\\": "src/"
+        }
+    },
+    "prefer-stable": true,
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "bin": [
+        "bin/magmi-gui"
+    ],
+    "scripts": {
+        "test": "phpunit --bootstrap tests/bootstrap.php tests"
+    },
+    "support": {
+        "issues": "https://github.com/grinet/magmi2-web-gui/issues",
+        "source": "https://github.com/grinet/magmi2-web-gui"
+    }
+}

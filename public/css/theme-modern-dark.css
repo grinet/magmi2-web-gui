@@ -1,0 +1,2 @@
+/* The shared workspace stylesheet owns both palettes. */
+:root{color-scheme:dark;--bg:#101b20;--surface:#18252b;--surface-soft:#1b2b31;--text:#e7eeef;--muted:#9badb4;--line:#2b3c43;--accent:#61d8b5;--accent-hover:#87e7ca;--accent-soft:#203e35;--sidebar:#0c191a}

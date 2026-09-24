@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+$autoload = $_composer_autoload_path ?? null;
+if ($autoload === null) {
+    foreach ([__DIR__ . '/../vendor/autoload.php', __DIR__ . '/../../../autoload.php'] as $candidate) {
+        if (is_file($candidate)) { $autoload = $candidate; break; }
+    }
+}
+if ($autoload === null) { fwrite(STDERR, "Run composer install first.\n"); exit(1); }
+require $autoload;
+$args = [];
+foreach (array_slice($argv, 2) as $arg) {
+    if (str_starts_with($arg, '--')) {
+        [$key, $value] = array_pad(explode('=', substr($arg, 2), 2), 2, '');
+        $args[$key] = $value;
+    }
+}
+try {
+    $base = $args['base-dir'] ?? getcwd();
+    $installer = new \Magmi\Gui\Installer\ApplicationInstaller();
+    switch ($argv[1] ?? 'help') {
+        case 'init':
+            $installer->initialize($base, $autoload);
+            echo "Application initialized. Document root: {$base}/public\n";
+            break;
+        case 'assets':
+            $installer->publishAssets($base);
+            echo "Assets published to {$base}/public\n";
+            break;
+        case 'help':
+            echo "magmi-gui init [--base-dir=/absolute/application/path]\nmagmi-gui assets [--base-dir=/absolute/application/path]\n";
+            break;
+        default: throw new InvalidArgumentException('Unknown command.');
+    }
+} catch (Throwable $error) { fwrite(STDERR, $error->getMessage() . "\n"); exit(1); }
