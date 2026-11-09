@@ -104,3 +104,9 @@ composer test
 Alpha. Sixteen legacy plugin entries are not implemented and cannot be enabled for import. Supported Magento versions outside 2.4.9 have not been verified. The separate [Magento module](https://github.com/grinet/magmi2-magento-module) provides native Magento admin and CLI entry points.
 
 License: [OSL-3.0](LICENSE).
+
+## PHP compatibility
+
+PHP 8.5 syntax and PHPCompatibility static checks were run on this release. Existing minimum PHP requirements are retained. Use a Magento release that supports your PHP runtime; syntax/static checks alone do not verify installation, DI compilation or storefront/admin behavior.
+
+The release remains alpha. Magento/Mage-OS database integration requires a test store; only standalone tests and source checks are included here.

@@ -112,7 +112,6 @@ class ProfileController
             $new = Profile::fromArray($source->toArray());
             $ref = new \ReflectionClass($new);
             $prop = $ref->getProperty('name');
-            $prop->setAccessible(true);
             $prop->setValue($new, $to);
             $this->profileManager->save($new);
         }

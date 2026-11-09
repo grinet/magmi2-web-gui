@@ -5,7 +5,7 @@
     "license": "OSL-3.0",
     "require": {
         "php": ">=8.2",
-        "grinet/magmi2-core": "^0.1@alpha",
+        "grinet/magmi2-core": "^0.1.1@alpha",
         "phpoffice/phpspreadsheet": "^5.0"
     },
     "autoload": {
